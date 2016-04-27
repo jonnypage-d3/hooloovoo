@@ -1,6 +1,6 @@
 {
   "name": "hooloovoo",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Control APA102 RGB LEDs via SPI",
   "main": "hooloovoo.js",
   "scripts": {
@@ -33,5 +33,31 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/jonnypage-d3/hooloovoo/issues"
-  }
+  },
+  "homepage": "https://github.com/jonnypage-d3/hooloovoo#readme",
+  "_id": "hooloovoo@1.0.5",
+  "_shasum": "71592c2dd13430c24a67dde31367706b869aabed",
+  "_from": "hooloovoo@*",
+  "_npmVersion": "2.11.2",
+  "_nodeVersion": "0.12.6",
+  "_npmUser": {
+    "name": "jonnypage_d3",
+    "email": "johnnyp@nait.ca"
+  },
+  "dist": {
+    "shasum": "71592c2dd13430c24a67dde31367706b869aabed",
+    "tarball": "https://registry.npmjs.org/hooloovoo/-/hooloovoo-1.0.5.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "jonnypage_d3",
+      "email": "johnnyp@nait.ca"
+    }
+  ],
+  "_npmOperationalInternal": {
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/hooloovoo-1.0.5.tgz_1461363988332_0.5947789486963302"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/hooloovoo/-/hooloovoo-1.0.5.tgz"
 }

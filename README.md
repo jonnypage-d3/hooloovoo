@@ -1,4 +1,4 @@
-﻿Hooloovoo
+Hooloovoo
 ==========
 A superintelligent shade of the color blue.
 
@@ -79,7 +79,7 @@ Parameters:
 This example sets `LED 0` (first LED) red. (255,0,0)
 
 ```js
-hooloovoo.set_pixel_BGR(0,0,0,255); // set LED1 to red
+hooloovoo.set_pixel_hexBGR(0,0,0,255); // set LED1 to red
 ```
 Since APA102 LED strips are BRG, there is an option to set them in their native format.
 Parameters:
