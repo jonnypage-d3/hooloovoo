@@ -1,6 +1,6 @@
 {
   "name": "hooloovoo",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Control APA102 RGB LEDs via SPI",
   "main": "hooloovoo.js",
   "scripts": {

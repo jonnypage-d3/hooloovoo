@@ -90,6 +90,18 @@ Parameters:
 
 This example sets `LED 0` (first LED) red. (0,0,255)
 
+### Get the RGB value of a pixel
+```js
+hooloovoo.get_pixel_RGB(0)
+```
+Returns an array of the RGB value of the targeted pixel
+
+Parameters:
+the LED you want to know the RGB value of
+
+```js
+hooloovoo.get_pixel_RGB(0); // if the LED was red, would return [255,0,0]
+```
 ### Turn off all the LEDs
 ```js
 hooloovoo.clear();
