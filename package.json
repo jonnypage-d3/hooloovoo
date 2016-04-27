@@ -1,0 +1,37 @@
+{
+  "name": "hooloovoo",
+  "version": "1.0.4",
+  "description": "Control APA102 RGB LEDs via SPI",
+  "main": "hooloovoo.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonnypage-d3/hooloovoo.git"
+  },
+  "keywords": [
+    "apa102",
+    "rpi",
+    "spi",
+    "led",
+    "rgb",
+    "raspberry",
+    "bgr",
+    "hex",
+    "pi"
+  ],
+  "dependencies": {
+    "rpio": "^0.9.7",
+    "hex2rgb": "^2.2.0"
+  },
+  "author": {
+    "name": "Jonathan Page - D3 Team",
+    "email": "johnnyp@nait.ca",
+    "url": "http://www.nait.ca"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jonnypage-d3/hooloovoo/issues"
+  }
+}
