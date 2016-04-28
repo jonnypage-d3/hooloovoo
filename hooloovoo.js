@@ -15,7 +15,7 @@
 var rpio = require('rpio');
 var hex2rgb = require('hex2rgb');
 
-exports.version = '1.0.6';
+exports.version = '1.0.7';
 
 // Init rpio
 rpio.init({
@@ -41,7 +41,7 @@ hooloovoo.prototype = {
         for (var i = 0; i < this.led_bits; i++) {
             this.led_buffer[i] = 0x00;
         };
-        clock_divider = typeof clock_divider !== 'undefined' ? clock_divider : 128;
+        clock_divider = typeof clock_divider !== 'undefined' ? clock_divider : 128; // Thanks @tearne
         if(debug) {
             this.debug = true;
             console.log("Hooloovoo: There are "+this.led_length+" Leds in the string")   
@@ -76,20 +76,20 @@ hooloovoo.prototype = {
     // Set RGB Values
     set_pixel_RGB: function(requested_led, red, green, blue) { // This will set a single LED a given BGRb Color
         if(this.debug) console.log('Hooloovoo: Setting Pixel ['+requested_led+'] RGB to: r['+red+'] g['+green+'] b['+blue+']');
-        this.set_pixel_BGRb(requested_led, blue, green, red, 255) // Hardcoded to 255 brightness
+        this.set_pixel_BGRb(requested_led, blue, green, red, 255) // Hardcoded to 255 brightness for now
     },
     fill_RGB: function(red, green, blue) { // This will set all the LEDs in the strip the same color
         if(this.debug) console.log('Hooloovoo: Filling strip RGB to: r['+red+'] g['+green+'] b['+blue+']');
-        this.fill_BGRb(blue, green, red, 255) // Hardcoded to 255 brightness
+        this.fill_BGRb(blue, green, red, 255) // Hardcoded to 255 brightness for now
     },
     // Set BGR Values
     set_pixel_BGR: function(requested_led, blue, green, red) { // This will set a single LED a given BGRb Color
         if(this.debug) console.log('Hooloovoo: Setting Pixel ['+requested_led+'] BGR to: b['+blue+'] g['+green+'] r['+red+']');
-        this.set_pixel_BGRb(requested_led, blue, green, red, 255) // Hardcoded to 255 brightness
+        this.set_pixel_BGRb(requested_led, blue, green, red, 255) // Hardcoded to 255 brightness for now
     },
     fill_BGR: function(blue, green, red) { // This will set all the LEDs in the strip the same color
         if(this.debug) console.log('Hooloovoo: Filling strip BGR to: b['+blue+'] g['+green+'] r['+red+']');
-        this.fill_BGRb(blue, green, red, 255) // Hardcoded to 255 brightness
+        this.fill_BGRb(blue, green, red, 255) // Hardcoded to 255 brightness for now
     },
     // Set BGRb Values - where all the actual work is done
     set_pixel_BGRb: function(requested_led, blue, green, red, brightness) { // This will set a single LED a given BGRb Color
@@ -97,7 +97,6 @@ hooloovoo.prototype = {
             console.log("Hooloovoo: You can't change a pixel that doesn't exist! - Pixel requested: "+requested_led);   
             return false;
         }
-        //console.log("set_pixel_BGRb");
         var current_led = 4 + (requested_led * 4) // Start frame, plus the given LED number = bit position
         this.led_buffer[current_led + 1] = blue // Blue
         this.led_buffer[current_led + 2] = green // Green
@@ -112,15 +111,8 @@ hooloovoo.prototype = {
             this.led_buffer[current_led + 2] = green // Green
             this.led_buffer[current_led + 3] = red // Red
             this.led_buffer[current_led + 0] = 255 // Brightness
-            //this.set_pixel_BGRb(i,blue, green, red, brightness);
         }
-        /*
-        for (var i = 4; i < this.led_bits - 8; i += 4) this.led_buffer[i] = 255; // Brightness at 4th bit - hardcoded to full power for now
-        for (var i = 5; i < this.led_bits - 7; i += 4) this.led_buffer[i] = blue; // Blue Starts at 5th bit, goes up by 4 to set each blue bit in the strip
-        for (var i = 6; i < this.led_bits - 6; i += 4) this.led_buffer[i] = green; // Green, goes up by 4 to set each green bit in the strip
-        for (var i = 7; i < this.led_bits - 5; i += 4) this.led_buffer[i] = red; // Red, goes up by 4 to set each red bit in the strip
-        
-        */this.write_strip();
+        this.write_strip();
     },
     get_pixel_RGB: function(requested_led) {
         var current_led = 4 + (requested_led * 4)
