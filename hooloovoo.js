@@ -41,12 +41,7 @@ hooloovoo.prototype = {
         for (var i = 0; i < this.led_bits; i++) {
             this.led_buffer[i] = 0x00;
         };
-        var clock_divider = 0;
-        if(clock_divider) {
-         clock_divider = clock_divider;   
-        } else {
-            clock_divider = 128;
-        }        
+        clock_divider = typeof clock_divider !== 'undefined' ? clock_divider : 128;
         if(debug) {
             this.debug = true;
             console.log("Hooloovoo: There are "+this.led_length+" Leds in the string")   
